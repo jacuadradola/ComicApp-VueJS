@@ -1,11 +1,9 @@
 // app global css in SCSS form
-.custom-height {
-  height: 800px;
-}
+
 .btnRandom {
-  border-radius: 100%;
+  border-radius: 50%;
   position: fixed;
-  bottom: 30px;
+  bottom: 100px;
   right: 30px;
   height: 70px;
   width: 70px;
@@ -13,7 +11,7 @@
 
 .btnNav {
   position: fixed;
-  bottom: 120px;
+  bottom: 30px;
   right: 30px;
   width: 190px;
 }

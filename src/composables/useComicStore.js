@@ -34,7 +34,17 @@ const useComicStore = () => {
     randomComic: async () => {
       const resp = await store.dispatch('comic/getComic', Math.floor(Math.random() * 826 + 1))
       return resp
-    }
+    },
+
+    EvaluationUp: async () => { /* store.dispatch['comic/evaluationComic'] */
+      const resp = await store.dispatch('comic/getComic', Math.floor(Math.random() * 826 + 1))
+      return resp
+    },
+    EvaluationDown: async () => {
+      //store.dispatch['comic/evaluationComic']
+      const resp = await store.dispatch('comic/getComic', Math.floor(Math.random() * 826 + 1))
+      return resp
+    },
     //Mutations
 
 

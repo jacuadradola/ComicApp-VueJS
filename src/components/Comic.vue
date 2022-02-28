@@ -6,9 +6,9 @@
     <div class="q-pa-md text-center">
       <img alt="Img comic" :src="dataComicImg" />
       <br />
-      <span class="text-h3">Tipo: {{ dataComicType }}</span>
+      <span class="text-h5">Tipo: {{ !dataComicType ? 'Desconocido' : dataComicType }}</span>
       <br />
-      <span class="text-h3">Género: {{ dataComicGender }}</span>
+      <span class="text-h5">Género: {{ !dataComicGender ? 'Desconocido' : dataComicGender }}</span>
     </div>
     <q-separator spaced />
   </div>

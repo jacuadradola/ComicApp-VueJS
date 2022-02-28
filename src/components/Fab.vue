@@ -1,11 +1,11 @@
 <template>
+  <q-btn color="secondary" label="Nuevo" class="btnRandom" @click="randomComic" />
   <q-btn
     color="primary"
     :label="sideMenuOpen ? 'Cerrar menu lateral' : 'Abrir menu lateral'"
     class="btnNav"
     @click="toggleSideMenu"
   />
-  <q-btn color="secondary" label="Nuevo comic" class="btnRandom" @click="randomComic" />
 </template>
 <script>
 import useComicStore from "src/composables/useComicStore";

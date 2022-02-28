@@ -19,3 +19,12 @@ export const getComic = async ({ commit }, idComic) => {
     return { ok: false, message: error }
   }
 }
+
+export const evaluationComic = ({ commit }, temp) => {
+
+  console.log(temp);
+
+  //commit('saveData', data)
+
+  return { ok: true }
+}
