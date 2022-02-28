@@ -20,8 +20,6 @@ const useComicStore = () => {
 
   return {
 
-    //State
-
     //Getters
     isDataReady: computed(() => store.getters['comic/isCurrentComic']),
     dataComicId: computed(() => store.getters['comic/isCurrentId']),
@@ -36,17 +34,12 @@ const useComicStore = () => {
       return resp
     },
 
-    EvaluationUp: async () => { /* store.dispatch['comic/evaluationComic'] */
-      const resp = await store.dispatch('comic/getComic', Math.floor(Math.random() * 826 + 1))
-      return resp
+    EvaluationUp: () => {
+      store.dispatch('comic/evaluationComic', true)
     },
-    EvaluationDown: async () => {
-      //store.dispatch['comic/evaluationComic']
-      const resp = await store.dispatch('comic/getComic', Math.floor(Math.random() * 826 + 1))
-      return resp
+    EvaluationDown: () => {
+      store.dispatch('comic/evaluationComic', false)
     },
-    //Mutations
-
 
   }
 

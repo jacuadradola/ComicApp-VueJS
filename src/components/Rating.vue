@@ -1,13 +1,8 @@
 <template>
   <div class="column items-center">
-    <h1 class="text-h5">Mi valoración</h1>
+    <!-- <h1 class="text-h5">Mi valoración</h1> -->
     <div class="q-pa-md q-gutter-md" style="font-size: 46px">
-      <q-icon
-        name="las la-thumbs-down"
-        class="text-red cursor-pointer"
-        color="secondary"
-        @click="EvaluationDown"
-      >
+      <q-icon name="las la-thumbs-down" class="text-red cursor-pointer" @click="EvaluationDown">
         <q-popup-proxy :offset="[400, 100]" transition-show="flip-down" transition-hide="flip-down">
           <q-banner class="bg-red text-white">
             <template v-slot:avatar>
@@ -17,6 +12,8 @@
           </q-banner>
         </q-popup-proxy>
       </q-icon>
+
+      <q-icon name="las la-random" class="text-blue cursor-pointer" @click="randomComic"></q-icon>
 
       <q-icon name="las la-thumbs-up" class="text-green cursor-pointer" @click="EvaluationUp">
         <q-popup-proxy :offset="[400, 100]" transition-show="flip-down" transition-hide="flip-down">
@@ -44,12 +41,13 @@ export default defineComponent({
   name: "Rating",
 
   setup() {
-    const { EvaluationUp, EvaluationDown, } = useComicStore()
+    const { EvaluationUp, EvaluationDown, randomComic } = useComicStore()
 
     return {
       //State
       EvaluationUp,
       EvaluationDown,
+      randomComic
 
     };
   }

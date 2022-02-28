@@ -20,11 +20,11 @@ export const getComic = async ({ commit }, idComic) => {
   }
 }
 
-export const evaluationComic = ({ commit }, temp) => {
+export const evaluationComic = ({ commit }, action) => {
 
-  console.log(temp);
+  if (action) { commit('addRating') } else commit('removeRating')
 
-  //commit('saveData', data)
+
 
   return { ok: true }
 }

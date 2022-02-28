@@ -1,37 +1,28 @@
 # ComicApp (comic)
 
-James Cuadrado - Comic
+Hola, espero que estes bien.
+Te presento esta app, la cual consume la API pública [Rick and Morty](https://rickandmortyapi.com/) y espero les agrade
 
-## Install the dependencies
+Esta app fue construida con un framework Quasar con Vuejs 3 + Vuex (Composition API) + Vue-router + Webpack + Sass
 
-```bash
-yarn
-```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+## Se necesita instalar las dependencias con
 
 ```bash
-quasar dev
+yarn install
 ```
 
-### Lint the files
+### Para iniciar la app sólo necesitas teclear (hot-code reloading, error reporting, etc.)
 
 ```bash
-yarn lint
+yarn dev
 ```
 
-### Format the files
+### Para construir la app para poder desplegar en producción
 
 ```bash
-yarn format
+yarn build
 ```
 
-### Build the app for production
+### Construido con Quasar Framework
 
-```bash
-quasar build
-```
-
-### Customize the configuration
-
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+See [Quasar Framework](https://quasar.dev).

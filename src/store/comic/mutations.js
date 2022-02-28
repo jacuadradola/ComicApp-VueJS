@@ -8,11 +8,13 @@ export function saveData(state, comic) {
   state.isData = true;
 }
 
-export function setLoadingRating(state) {
-  state.setLoadingRating = true;
-}
-
-export function setRating(state, rating) {
+export function addRating(state) {
   state.rating = rating;
   state.isLoadingRating = false;
 }
+
+export function deleteRating(state) {
+  state.rating = rating;
+  state.isLoadingRating = false;
+}
+
