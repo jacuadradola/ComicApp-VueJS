@@ -5,6 +5,9 @@ export default function () {
     id: null,
     name: "",
     image: "",
-    status: "",
+    type: "",
+    gender: "",
+    isLoadingRating: false,
+    rating: []
   };
 }

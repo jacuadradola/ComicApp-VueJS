@@ -26,11 +26,15 @@ const useComicStore = () => {
     isDataReady: computed(() => store.getters['comic/isCurrentComic']),
     dataComicId: computed(() => store.getters['comic/isCurrentId']),
     dataComicName: computed(() => store.getters['comic/isCurrentName']),
-    dataComicImg: computed(() => store.getters['isCurrentImg/isCurrentImg']),
+    dataComicImg: computed(() => store.getters['comic/isCurrentImg']),
+    dataComicGender: computed(() => store.getters['comic/isCurrentGender']),
+    dataComicType: computed(() => store.getters['comic/isCurrentType']),
 
     //Actions
-    getComic,
-
+    randomComic: async () => {
+      const resp = await store.dispatch('comic/getComic', Math.floor(Math.random() * 826 + 1))
+      return resp
+    }
     //Mutations
 
 

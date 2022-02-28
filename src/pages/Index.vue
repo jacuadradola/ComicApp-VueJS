@@ -10,8 +10,6 @@
       <div v-else class="justify-content-center align-items-center">
         <div class="q-pt-md text-center">
           <span class="text-h2">{{ dataComicName }}</span>
-          <br />
-          <span class="text-h4">{{ dataComicId }}</span>
         </div>
         <div class="q-pa-md text-center">
           <transition
@@ -19,8 +17,12 @@
             enter-active-class="animated heartBeat"
             leave-active-class="animated heartBeat"
           >
-            <img alt="Img comic" src="https://placeimg.com/500/300/nature" />
+            <img alt="Img comic" :src="dataComicImg" />
           </transition>
+          <br />
+          <span class="text-h3">Tipo: {{ dataComicType }}</span>
+          <br />
+          <span class="text-h3">Género: {{ dataComicGender }}</span>
           <q-separator spaced />
           <Rating />
         </div>
@@ -32,7 +34,7 @@
       class="btnNav"
       @click="toggleSideMenu"
     />
-    <q-btn color="secondary" label="Nuevo comic" class="btnRandom" @click="getComic" />
+    <q-btn color="secondary" label="Nuevo comic" class="btnRandom" @click="randomComic" />
   </q-page>
 </template>
 
@@ -49,44 +51,21 @@ export default defineComponent({
   name: "PageIndex",
   components: { Rating },
   setup() {
-    const shape = ref('1')
-    const temp = ref('')
     const { sideMenuOpen, toggleSideMenu } = useUI();
 
-    const { getComic, isDataReady, dataComicId, dataComicName, dataComicImg, } = useComicStore()
-
-    onMounted(() => {
-
-      if (isDataReady.value) {
-        return getComic();
-      }
-    });
-    watch(isDataReady, () => {
-      if (isDataReady.value) {
-        return getComic();
-      }
-    })
-
-
+    const { randomComic, isDataReady, dataComicName, dataComicImg, dataComicGender, dataComicType } = useComicStore()
 
     return {
       //State
-      shape,
-      temp,
       sideMenuOpen,
       isDataReady,
-      dataComicId,
       dataComicName,
       dataComicImg,
-      getComic,
-
-
+      dataComicType,
+      dataComicGender,
 
       toggleSideMenu,
-      /*  getComic: async () => {
-         const resp = await store.dispatch('comic/getComic', idComic)
-         return resp
-       } */
+      randomComic
 
     };
   }

@@ -11,6 +11,9 @@ export function isCurrentName(state) {
 export function isCurrentImg(state) {
   return state.image
 }
-export function currentComic(state) {
-  return state.currentComic
+export function isCurrentGender(state) {
+  return state.gender
+}
+export function isCurrentType(state) {
+  return state.type
 }
