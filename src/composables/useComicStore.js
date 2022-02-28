@@ -7,34 +7,29 @@ const useComicStore = () => {
 
   const idComic = Math.floor(Math.random() * 826 + 1);
 
-  onMounted(() => {
-    if (!store.getters['comic/isCurrentComic']) {
-      store.dispatch('comic/getComic', idComic)
-    }
-  })
-
-
   const getComic = async () => {
     const resp = await store.dispatch('comic/getComic', idComic)
     return resp
   }
 
+  onMounted(() => {
+    if (!store.getters['comic/isCurrentComic']) {
+      getComic()
+    }
+  })
+
   return {
+
     //State
-    getComic,
-    isDataReady: computed({
-      get() {
-        return store.getters['comic/isCurrentComic']
-      }
-    }),
-    imgComic: computed({
-      get() {
-        return store.getters['comic/image']
-      }
-    })
+
     //Getters
+    isDataReady: computed(() => store.getters['comic/isCurrentComic']),
+    dataComicId: computed(() => store.getters['comic/isCurrentId']),
+    dataComicName: computed(() => store.getters['comic/isCurrentName']),
+    dataComicImg: computed(() => store.getters['isCurrentImg/isCurrentImg']),
 
     //Actions
+    getComic,
 
     //Mutations
 

@@ -2,9 +2,22 @@
 .custom-height {
   height: 800px;
 }
-.logo {
+.btnRandom {
+  border-radius: 100%;
   position: fixed;
   bottom: 30px;
-  left: 30px;
-  width: 100px;
+  right: 30px;
+  height: 70px;
+  width: 70px;
+}
+
+.btnNav {
+  position: fixed;
+  bottom: 120px;
+  right: 30px;
+  width: 190px;
+}
+.img {
+  width: 200px;
+  height: 200px;
 }

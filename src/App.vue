@@ -1,6 +1,5 @@
 <template>
   <router-view />
-  <img class="logo" src="./assets/logo.png" alt="Vue logo" />
 </template>
 <script>
 import { defineComponent } from "vue";
