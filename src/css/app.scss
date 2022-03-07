@@ -1,12 +1,47 @@
 // app global css in SCSS form
 
-.btnRandom {
+/* .btnRandom {
   border-radius: 50%;
   position: fixed;
   bottom: 100px;
   right: 30px;
   height: 70px;
   width: 70px;
+} */
+.mySelectEvaluation {
+  width: 0px;
+  height: 50px;
+  border-left: 25px solid #555e68;
+  border-right: 25px solid #555e68;
+  border-bottom: 25px solid transparent;
+}
+#like {
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+#like:before,
+#like:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+#like:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.comic-size {
+  width: 200px;
+  height: 200px;
 }
 
 .btnNav {
@@ -15,7 +50,8 @@
   right: 30px;
   width: 190px;
 }
-.img {
-  width: 200px;
-  height: 200px;
+
+.loading {
+  width: 100px;
+  height: 100px;
 }

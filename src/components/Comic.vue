@@ -1,14 +1,14 @@
 <template>
   <div class="justify-content-center align-items-center">
     <div class="q-pt-md text-center">
-      <span class="text-h2">{{ dataComicName }}</span>
+      <span class="text-h3">{{ dataComicName }}</span>
     </div>
     <div class="q-pa-md text-center">
-      <img alt="Img comic" :src="dataComicImg" />
+      <img alt="Img comic" class="comic-size" :src="dataComicImg" />
       <br />
-      <span class="text-h5">Tipo: {{ !dataComicType ? 'Desconocido' : dataComicType }}</span>
+      <span class="text-h6">Tipo: {{ !dataComicType ? 'Desconocido' : dataComicType }}</span>
       <br />
-      <span class="text-h5">Género: {{ !dataComicGender ? 'Desconocido' : dataComicGender }}</span>
+      <span class="text-h6">Género: {{ !dataComicGender ? 'Desconocido' : dataComicGender }}</span>
     </div>
     <q-separator spaced />
   </div>

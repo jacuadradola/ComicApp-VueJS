@@ -3,6 +3,7 @@ import { instanceApi } from 'boot/axios';
 export const getComic = async ({ commit }, idComic) => {
 
   try {
+    commit('isLoadingData')
 
     const customData = {
       method: "get",
@@ -20,11 +21,8 @@ export const getComic = async ({ commit }, idComic) => {
   }
 }
 
-export const evaluationComic = ({ commit }, action) => {
+export const updateComic = ({ commit }, data) => {
 
-  if (action) { commit('addRating') } else commit('removeRating')
-
-
-
+  commit('updateRating', data)
   return { ok: true }
 }

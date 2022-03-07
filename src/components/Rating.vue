@@ -13,7 +13,7 @@
         </q-popup-proxy>
       </q-icon>
 
-      <q-icon name="las la-random" class="text-blue cursor-pointer" @click="randomComic"></q-icon>
+      <q-icon name="las la-random" class="text-primary cursor-pointer" @click="getComic"></q-icon>
 
       <q-icon name="las la-thumbs-up" class="text-green cursor-pointer" @click="EvaluationUp">
         <q-popup-proxy :offset="[400, 100]" transition-show="flip-down" transition-hide="flip-down">
@@ -41,13 +41,13 @@ export default defineComponent({
   name: "Rating",
 
   setup() {
-    const { EvaluationUp, EvaluationDown, randomComic } = useComicStore()
+    const { EvaluationUp, EvaluationDown, getComic } = useComicStore()
 
     return {
       //State
       EvaluationUp,
       EvaluationDown,
-      randomComic
+      getComic
 
     };
   }

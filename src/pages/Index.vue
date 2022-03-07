@@ -2,10 +2,7 @@
   <q-page class="q-pa-md">
     <div class="column items-center">
       <div v-if="!isDataReady">
-        <div class="text-center">
-          <h3>Espere por favor</h3>
-          <span>Cargando información</span>
-        </div>
+        <Loading />
       </div>
       <div v-else>
         <Comic />
@@ -24,11 +21,12 @@ import useComicStore from "../composables/useComicStore";
 import Comic from 'components/Comic.vue';
 import Rating from 'components/Rating.vue';
 import Fab from 'components/Fab.vue';
+import Loading from 'components/Loading.vue';
 
 export default defineComponent({
 
   name: "PageIndex",
-  components: { Comic, Rating, Fab },
+  components: { Comic, Rating, Fab, Loading },
   setup() {
 
     const { isDataReady } = useComicStore()

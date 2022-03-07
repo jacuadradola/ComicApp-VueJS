@@ -8,13 +8,6 @@ export function saveData(state, comic) {
   state.isData = true;
 }
 
-export function addRating(state) {
-  state.rating = rating;
-  state.isLoadingRating = false;
+export function isLoadingData(state) {
+  state.isData = !state.isData
 }
-
-export function deleteRating(state) {
-  state.rating = rating;
-  state.isLoadingRating = false;
-}
-

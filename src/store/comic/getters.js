@@ -2,18 +2,18 @@ export function someGetter(/* state */) { }
 export function isCurrentComic(state) {
   return state.isData
 }
-export function isCurrentId(state) {
+export function currentId(state) {
   return state.id
 }
-export function isCurrentName(state) {
+export function currentName(state) {
   return state.name
 }
-export function isCurrentImg(state) {
+export function currentImg(state) {
   return state.image
 }
-export function isCurrentGender(state) {
+export function currentGender(state) {
   return state.gender
 }
-export function isCurrentType(state) {
+export function currentType(state) {
   return state.type
 }

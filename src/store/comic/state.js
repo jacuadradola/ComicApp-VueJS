@@ -8,6 +8,6 @@ export default function () {
     type: "",
     gender: "",
     isLoadingRating: false,
-    rating: []
+    rating: ""
   };
 }

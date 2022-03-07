@@ -5,41 +5,52 @@ const useComicStore = () => {
 
   const store = useStore();
 
-  const idComic = Math.floor(Math.random() * 826 + 1);
+  let idComic = Math.floor(Math.random() * 826 + 1);
+  let idCurrent = store.getters['comic/currentId']
+  let isCurrentComic = store.getters['comic/isCurrentComic']
 
   const getComic = async () => {
-    const resp = await store.dispatch('comic/getComic', idComic)
-    return resp
+    await store.dispatch('comic/getComic', idComic)
   }
 
+
   onMounted(() => {
-    if (!store.getters['comic/isCurrentComic']) {
+    if (!isCurrentComic) {
       getComic()
+
+      /*  verifyComic: () => { */
+      for (let k = 0; k < localStorage.length; k++) {
+        const key = localStorage.key(k);
+        const value = localStorage.getItem(key);
+        console.log('key: ' + key + ', value:' + value);
+
+      }
+      /* } */
+
     }
   })
 
   return {
 
-    //Getters
-    isDataReady: computed(() => store.getters['comic/isCurrentComic']),
-    dataComicId: computed(() => store.getters['comic/isCurrentId']),
-    dataComicName: computed(() => store.getters['comic/isCurrentName']),
-    dataComicImg: computed(() => store.getters['comic/isCurrentImg']),
-    dataComicGender: computed(() => store.getters['comic/isCurrentGender']),
-    dataComicType: computed(() => store.getters['comic/isCurrentType']),
+    getComic,
 
-    //Actions
-    randomComic: async () => {
-      const resp = await store.dispatch('comic/getComic', Math.floor(Math.random() * 826 + 1))
-      return resp
-    },
+    isDataReady: computed(() => store.getters['comic/isCurrentComic']),
+    dataComicId: computed(() => store.getters['comic/currentId']),
+    dataComicName: computed(() => store.getters['comic/currentName']),
+    dataComicImg: computed(() => store.getters['comic/currentImg']),
+    dataComicGender: computed(() => store.getters['comic/currentGender']),
+    dataComicType: computed(() => store.getters['comic/currentType']),
 
     EvaluationUp: () => {
-      store.dispatch('comic/evaluationComic', true)
+      localStorage.setItem(idCurrent, true);
+      localStorage.refreshItem();
     },
     EvaluationDown: () => {
-      store.dispatch('comic/evaluationComic', false)
+      localStorage.setItem(idCurrent, false);
+      localStorage.refreshItem();
     },
+
+
 
   }
 
