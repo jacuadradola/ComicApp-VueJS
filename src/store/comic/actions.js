@@ -21,8 +21,18 @@ export const getComic = async ({ commit }, idComic) => {
   }
 }
 
-export const updateComic = ({ commit }, data) => {
+export const updateLike = ({ commit }, condition) => {
+  if (condition === 'true') {
+    const data = { up: true, down: false }
+    commit('myChoice', data)
 
-  commit('updateRating', data)
-  return { ok: true }
+  } else if (condition === 'false') {
+    const data = { up: false, down: true }
+    commit('myChoice', data)
+  }
+  else if (condition === 'notRating') {
+    const data = { up: false, down: false }
+    commit('myChoice', data)
+  }
+
 }

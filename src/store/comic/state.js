@@ -8,6 +8,11 @@ export default function () {
     type: "",
     gender: "",
     isLoadingRating: false,
-    rating: ""
+    rating: "",
+    like: false,
+    notLike: false,
+    comic: [
+      { id: null, name: "", image: "", type: "", gender: "", }
+    ]
   };
 }

@@ -11,3 +11,8 @@ export function saveData(state, comic) {
 export function isLoadingData(state) {
   state.isData = !state.isData
 }
+
+export function myChoice(state, comic) {
+  state.like = comic.up
+  state.notLike = comic.down;
+}

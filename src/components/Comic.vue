@@ -1,7 +1,7 @@
 <template>
   <div class="justify-content-center align-items-center">
     <div class="q-pt-md text-center">
-      <span class="text-h3">{{ dataComicName }}</span>
+      <span class="text-h3">{{ dataComicId }}: {{ dataComicName }}</span>
     </div>
     <div class="q-pa-md text-center">
       <img alt="Img comic" class="comic-size" :src="dataComicImg" />
@@ -25,7 +25,7 @@ export default defineComponent({
   components: {},
   setup() {
 
-    const { dataComicName, dataComicImg, dataComicGender, dataComicType } = useComicStore()
+    const { dataComicId, dataComicName, dataComicImg, dataComicGender, dataComicType } = useComicStore()
 
     return {
       //State
@@ -33,7 +33,7 @@ export default defineComponent({
       dataComicImg,
       dataComicType,
       dataComicGender,
-
+      dataComicId
     };
   }
 

@@ -17,3 +17,9 @@ export function currentGender(state) {
 export function currentType(state) {
   return state.type
 }
+export function isLike(state) {
+  return state.like
+}
+export function isNotLike(state) {
+  return state.notLike
+}
